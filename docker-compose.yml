@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  web:
+    image: vollborn-dev
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+    ports:
+      - '${PORT:-80}:80'
