@@ -1,0 +1,29 @@
+---
+export interface Props {
+	spacing?: boolean;
+}
+
+const { spacing } = Astro.props;
+
+const classes: string[] = [
+	'section-text',
+	spacing ? 'spacing--section-text' : ''
+];
+---
+
+<p class:list={classes}>
+	<slot />
+</p>
+
+<style lang="scss">
+	@import "../../styles/mixins/font.scss";
+	@import "../../styles/spacings.scss";
+
+	.section-text {
+		font-size: $font-size-text;
+		line-height: $font-line-height-text;
+		color: $font-color-text;
+		padding: 0;
+		margin: 0;
+	}
+</style>

@@ -1,81 +1,54 @@
 ---
+import HeroScrollOver from '../components/Hero/HeroScrollOver.astro';
+import HeroVideo from '../components/Hero/HeroVideo.astro';
+import LogoRow from '../components/LogoRow.astro';
+import ProjectRow from '../components/ProjectRow/ProjectRow.astro';
+import SectionHeadline from '../components/Text/SectionHeadline.astro';
+import SectionText from '../components/Text/SectionText.astro';
+import WidthContainer from '../components/WidthContainer.astro';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Footer from '../components/Footer/Footer.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Home">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<HeroVideo />
+
+		<HeroScrollOver>
+			<WidthContainer>
+				<SectionHeadline spacing>
+					Welcome!
+				</SectionHeadline>
+
+				<SectionText spacing>
+					My name is Oliver. I am a german full stack developer and I love coding. And Star Wars, as you might have guessed from the title of this page.
+					I am currently 21 years old and live in Elmshorn, a rather small city near Hamburg in Germany. Besides coding and Star Wars I really enjoy cycling in my free time.
+					After school I did an apprenticeship as an application developer, which I officially completed in January of this year.
+				</SectionText>
+
+				<SectionHeadline spacing spacingTop>
+					My Skillset
+				</SectionHeadline>
+
+				<SectionText spacing>
+					During the past few years I gained quite a bit of experience in a relative specific tech stack. I just listed a few logos below.
+				</SectionText>
+
+				<LogoRow />
+
+				<SectionHeadline spacing spacingTop>
+					Recent Projects
+				</SectionHeadline>
+
+				<SectionText spacing>
+					Most of my professional projects are of course closed source and therefore not accessible to the public.
+					Below are some of my private projects, including a link to their source code on GitHub and the deployed result.
+				</SectionText>
+
+				<ProjectRow />
+			</WidthContainer>
+
+			<Footer />
+		</HeroScrollOver>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>

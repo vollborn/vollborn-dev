@@ -1,0 +1,40 @@
+---
+import link from '../assets/icons/link.svg?raw'
+import github from '../assets/icons/github.svg?raw'
+import linkedin from '../assets/icons/linkedin.svg?raw'
+
+export interface Props {
+	name: string;
+	color?: string;
+	size?: string;
+}
+
+const { name, color, size } = Astro.props;
+
+const getIcon = (name: string) => {
+	switch (name) {
+		case 'link': return link;
+		case 'github': return github;
+		case 'linkedin': return linkedin;
+	}
+}
+
+const icon = getIcon(name);
+
+const iconColor = color || "#000";
+const iconSize = size || "18px"
+
+const style = 'fill: ' + iconColor + '; width: ' + iconSize + '; height: ' + iconSize;
+---
+
+<div class="icon" style={style}>
+	<Fragment set:html={icon} style={iconColor} />
+</div>
+
+<style lang="scss">
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

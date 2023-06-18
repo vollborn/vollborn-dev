@@ -1,0 +1,105 @@
+---
+import ProjectHeadline from "./ProjectHeadline.astro";
+import SectionText from "../Text/SectionText.astro";
+import ProjectLink from "./ProjectLink.astro";
+---
+
+<div class="project-row">
+	<div class="project-row__entry">
+		<div class="project-row__image">
+			<img src="/assets/projects/weidmannsheil-lieth.jpg" alt="Weidmannsheil Lieth" />
+		</div>
+
+		<div class="project-row__description">
+			<ProjectHeadline>
+				Weidmannsheil Lieth
+			</ProjectHeadline>
+
+			<SectionText spacing>
+				The "Schützenbrüderschaft Weidmannsheil" is the local rifle club of Klein Nordende.
+			</SectionText>
+
+			<div class="project-row__links">
+				<ProjectLink label="github.com" url="https://github.com/Weidmannsheil-Lieth" />
+				<ProjectLink label="weidmannsheil-lieth.de" url="https://weidmannsheil-lieth.de" />
+			</div>
+		</div>
+	</div>
+
+	<div class="project-row__entry">
+		<div class="project-row__image">
+			<img src="/assets/projects/allesimrudel.jpg" alt="Alles im Rudel" />
+		</div>
+
+		<div class="project-row__description">
+			<ProjectHeadline>
+				Alles im Rudel
+			</ProjectHeadline>
+
+			<SectionText spacing>
+				Alles im Rudel e.V. is an airsoft club from Elmshorn.
+			</SectionText>
+
+			<div class="project-row__links">
+				<ProjectLink label="github.com" url="https://github.com/Alles-im-Rudel/" />
+				<ProjectLink label="allesimrudel.de" url="https://www.allesimrudel.de" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	@import "../../styles/mixins/breakpoints.scss";
+
+	.project-row {
+		&__entry {
+			display: flex;
+			margin-top: 48px;
+
+			@media only screen and (max-width: $breakpoint-small) {
+				display: block;
+				margin-top: 72px;
+
+				&:nth-child(1) {
+					margin-top: 48px;
+				}
+			}
+		}
+
+		&__image {
+			width: 25%;
+
+			img {
+				width: 100%;
+			}
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				width: 40%;
+			}
+
+			@media only screen and (max-width: $breakpoint-small) {
+				width: 100%;
+			}
+		}
+
+		&__description {
+			width: 75%;
+			padding-left: 48px;
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				width: 60%;
+			}
+
+			@media only screen and (max-width: $breakpoint-small) {
+				width: 100%;
+				margin-top: 32px;
+				padding-left: 0;
+			}
+		}
+
+		&__links {
+			display: flex;
+			margin-top: 4px;
+		}
+	}
+</style>

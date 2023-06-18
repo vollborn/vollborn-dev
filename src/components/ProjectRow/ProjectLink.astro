@@ -1,0 +1,35 @@
+---
+import Icon from "../Icon.astro";
+export interface Props {
+	label: string;
+	url: string;
+}
+
+const { label, url } = Astro.props;
+---
+
+<a href={url} class="project-link" target="_blank">
+	<Icon name="link" color="#4437ce" />
+
+	<div class="project-link__label">
+		{label}
+	</div>
+</a>
+
+<style lang="scss">
+	@import "../../styles/mixins/font.scss";
+
+	.project-link {
+		display: flex;
+
+		font-size: $font-size-link;
+		color: $font-color-link;
+
+		text-decoration: none;
+		margin-right: 32px;
+
+		&__label {
+			margin-left: 8px;
+		}
+	}
+</style>

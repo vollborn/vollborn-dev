@@ -1,0 +1,134 @@
+<div class="logo-row">
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--docker">
+			<a href="https://www.docker.com" target="_blank">
+				<img src="/assets/logos/docker-logo.png" alt="Docker Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--laravel">
+			<a href="https://laravel.com" target="_blank">
+				<img src="/assets/logos/laravel-logo.svg" alt="Laravel Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--symfony">
+			<a href="https://symfony.com" target="_blank">
+				<img src="/assets/logos/symfony-logo.svg" alt="Symfony Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper">
+			<a href="https://pimcore.com" target="_blank">
+				<img src="/assets/logos/pimcore-logo.svg" alt="Pimcore Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--vue">
+			<a href="https://vuejs.org" target="_blank">
+				<img src="/assets/logos/vue-logo.png" alt="Vue Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper">
+			<a href="https://vuetifyjs.com" target="_blank">
+				<img src="/assets/logos/vuetify-logo.svg" alt="Vuetify Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--mysql">
+			<a href="https://www.mysql.com" target="_blank">
+				<img src="/assets/logos/mysql-logo.svg" alt="MySQL Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--redis">
+			<a href="https://redis.io" target="_blank">
+				<img src="/assets/logos/redis-logo.svg" alt="Redis Logo" />
+			</a>
+		</div>
+	</div>
+
+	<div class="logo-row__logo">
+		<div class="logo-row__logo-wrapper logo-row__logo-wrapper--nginx">
+			<a href="https://nginx.org" target="_blank">
+				<img src="/assets/logos/nginx-logo.svg" alt="nginx Logo" />
+			</a>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	@import "../styles/mixins/breakpoints.scss";
+
+	.logo-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 32px;
+
+		&__logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 33.33%;
+			max-width: 33.33%;
+			aspect-ratio: 5 / 2;
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				min-width: 50%;
+				max-width: 50%;
+			}
+
+			@media only screen and (max-width: $breakpoint-small) {
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		&__logo-wrapper {
+			width: 70%;
+
+			img {
+				width: 100%;
+			}
+
+			&--docker {
+				width: 65%;
+			}
+
+			&--symfony {
+				width: 65%;
+			}
+
+			&--laravel {
+				width: 80%;
+			}
+
+			&--vue {
+				width: 60%;
+			}
+
+			&--redis {
+				width: 60%;
+			}
+
+			&--nginx {
+				width: 50%;
+			}
+		}
+	}
+</style>

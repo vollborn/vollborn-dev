@@ -1,0 +1,11 @@
+<div class="width-container">
+	<slot />
+</div>
+
+<style lang="scss">
+	@import '../styles/mixins/max-width.scss';
+
+	.width-container {
+		@include max-width();
+	}
+</style>

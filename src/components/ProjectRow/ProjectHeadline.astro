@@ -1,0 +1,28 @@
+---
+export interface Props {
+	spacing?: boolean;
+}
+
+const { spacing } = Astro.props;
+
+const classes: string[] = [
+	'project-headline',
+	spacing ? 'spacing--project-headline' : ''
+];
+---
+
+<h3 class:list={classes}>
+	<slot />
+</h3>
+
+<style lang="scss">
+	@import "../../styles/mixins/font.scss";
+	
+	.project-headline {
+		font-size: $font-size-headline-3;
+		line-height: $font-line-height-headline-3;
+		color: $font-color-headline-3;
+		margin: 0;
+		padding: 0;
+	}
+</style>

@@ -1,0 +1,31 @@
+---
+export interface Props {
+	spacing?: boolean;
+	spacingTop?: boolean;
+}
+
+const { spacing, spacingTop } = Astro.props;
+
+const classes: string[] = [
+	'section-headline',
+	spacing ? 'spacing--section-headline' : '',
+	spacingTop ? 'spacing--section-headline-top' : ''
+];
+---
+
+<h2 class:list={classes}>
+	<slot />
+</h2>
+
+<style lang="scss">
+	@import "../../styles/mixins/font.scss";
+	@import "../../styles/spacings.scss";
+
+	.section-headline {
+		font-size: $font-size-headline-2;
+		line-height: $font-line-height-headline-2;
+		color: $font-color-headline-2;
+		padding: 0;
+		margin: 0;
+	}
+</style>

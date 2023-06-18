@@ -1,0 +1,107 @@
+---
+import Icon from '../Icon.astro';
+import WidthContainer from '../WidthContainer.astro';
+---
+
+<footer class="footer">
+	<WidthContainer>
+		<div class="footer__wrapper">
+			<div class="footer__labels">
+				<div class="footer__name">
+					Oliver Vollborn
+				</div>
+
+				<div class="footer__url">
+					<a href="/">
+						vollborn.dev
+					</a>
+				</div>
+			</div>
+
+			<div class="footer__socials">
+				<a href="https://www.linkedin.com/in/oliver-vollborn/" class="footer__social" target="_blank">
+					<Icon name="linkedin" color="#fff" size="24px" />
+					
+					<div class="footer__social-label">
+						LinkedIn
+					</div>
+				</a>
+
+				<a href="https://github.com/vollborn" class="footer__social" target="_blank">
+					<Icon name="github" color="#fff" size="24px" />
+					
+					<div class="footer__social-label">
+						GitHub
+					</div>
+				</a>
+			</div>
+		</div>
+	</WidthContainer>
+</footer>
+
+<style lang="scss">
+	@import "../../styles/mixins/font.scss";
+	@import "../../styles/mixins/breakpoints.scss";
+
+	.footer {
+		margin-top: 128px;
+		padding: 64px 0;
+		background-color: #111;
+		color: #ddd;
+
+		@media only screen and (max-width: $breakpoint-small) {
+			margin-top: 96px;
+		}
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media only screen and (max-width: $breakpoint-small) {
+				display: block;
+			}
+		}
+
+		&__name {
+			font-size: $font-size-text;
+		}
+
+		&__url {
+			margin-top: 8px;
+
+			a {
+				text-decoration: none;
+				color: #999;
+				font-size: $font-size-link;
+			}
+		}
+
+		&__socials {
+			display: flex;
+
+			@media only screen and (max-width: $breakpoint-small) {
+				margin-top: 48px;
+			}
+		}
+
+		&__social {
+			display: flex;
+			align-items: center;
+
+			margin-left: 32px;
+	
+			font-size: $font-size-link;
+			text-decoration: none;
+			color: #ddd;
+
+			&:nth-child(1) {
+				margin-left: 0;
+			}
+		}
+
+		&__social-label {
+			margin-left: 8px;
+		}
+	}
+</style>
