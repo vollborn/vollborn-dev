@@ -1,20 +1,24 @@
 ---
 export interface Props {
-	title: string;
+	title?: string;
 }
 
 const { title } = Astro.props;
+
+const pageTitle = title
+	? title + ' | vollborn.dev'
+	: 'vollborn.dev'
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Hello there! My name is Oliver. I am a german full stack developer and I love coding. And Star Wars. Check out my full portfolio!">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | vollborn.dev</title>
+		<title>{pageTitle}</title>
 	</head>
 
 	<body>
