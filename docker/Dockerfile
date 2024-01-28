@@ -4,7 +4,7 @@ FROM node:20-alpine AS build
 COPY ./ /app
 WORKDIR /app
 
-RUN npm install && npm run build
+RUN yarn && yarn build
 
 # web server
 FROM nginx:alpine AS web
